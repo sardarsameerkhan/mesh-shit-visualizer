@@ -3,7 +3,10 @@ from __future__ import annotations
 import matplotlib.pyplot as plt
 import streamlit as st
 
-from src.utils.shiftLogic import ShiftAnalysis
+try:
+    from ..utils.shiftLogic import ShiftAnalysis
+except ImportError:
+    from utils.shiftLogic import ShiftAnalysis
 
 
 def render_complexity_panel(analysis: ShiftAnalysis) -> None:

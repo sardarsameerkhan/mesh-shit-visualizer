@@ -4,7 +4,10 @@ from math import isqrt
 
 import streamlit as st
 
-from src.utils.shiftLogic import is_perfect_square, validate_inputs
+try:
+    from ..utils.shiftLogic import is_perfect_square, validate_inputs
+except ImportError:
+    from utils.shiftLogic import is_perfect_square, validate_inputs
 
 
 def render_control_panel(default_p: int = 16, default_q: int = 5) -> tuple[int, int, bool]:

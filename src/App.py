@@ -2,10 +2,16 @@ from __future__ import annotations
 
 import streamlit as st
 
-from src.components.ComplexityPanel import render_complexity_panel
-from src.components.ControlPanel import render_control_panel
-from src.components.MeshGrid import render_before_after, run_animation
-from src.utils.shiftLogic import analyze_complexity, apply_two_stage_mesh_shift
+try:
+    from .components.ComplexityPanel import render_complexity_panel
+    from .components.ControlPanel import render_control_panel
+    from .components.MeshGrid import render_before_after, run_animation
+    from .utils.shiftLogic import analyze_complexity, apply_two_stage_mesh_shift
+except ImportError:
+    from components.ComplexityPanel import render_complexity_panel
+    from components.ControlPanel import render_control_panel
+    from components.MeshGrid import render_before_after, run_animation
+    from utils.shiftLogic import analyze_complexity, apply_two_stage_mesh_shift
 
 
 def run_app() -> None:
